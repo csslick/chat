@@ -2,16 +2,167 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>tawk</title>
+	<link href="https://fonts.googleapis.com/css?family=Eagle+Lake|Roboto" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/csslick_grid.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style media="screen">
+		body{
+			font-family: 'Roboto', sans-serif;
+		}
+		h1,h2,h3,h4{ font-weight: normal;}
+		a{ text-decoration: none;}
+		#main_header{
+			position: relative;
+			background: url('https://images.pexels.com/photos/864990/pexels-photo-864990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding-bottom: 38%;
+		}
+		#main_header:after{
+			content: "";
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			display: block;
+			border: 1px solid green;
+			background: rgba(0,0,0,0.5);
+			background: linear-gradient(180deg,rgba(0,0,0,0.8),rgba(0,0,0,0) 80%);
+		}
+		header{
+			position: relative;
+			color: #fff;
+			border-bottom: 1px solid rgba(255,255,255,0.5);
+			overflow: hidden;
+			height: 60px;
+			z-index: 9;
+		}
+		header h1, header h2{
+			 display: inline-block;
+			 vertical-align: middle;
+			 margin-top: -15px;
+		 }
+		header h1{font-family: 'Eagle Lake', cursive;}
+		header h1 > span{color:#23caca}
+		header h2{ font-size: 14px; margin-left: 10px;}
+		header a{ color: #fff;}
+		header div:nth-child(2){ text-align: right;}
+
+		header .login, header .sign{
+			border: 1px solid rgba(255,255,255,0.8);
+			padding: 6px 24px;
+			border-radius: 20px;
+			margin-left: 10px;
+			font-size: 0.8em;
+		}
+		header .login:hover, header .sign:hover{
+			background: rgba(255,255,255,0.8);
+			color: rgba(0,0,0,0.8);
+			border-color: transparent;
+		}
+		#main_header{
+			border: 1px solid red;
+			position: relative;
+		}
+		#main_header .caption{
+			/*  운동은 곧 인생의 활력입니다! */
+			position: absolute;
+			width: 55vw;
+			left: 50%; top: 50%;
+			transform: translate(-50%,-50%);
+			font-size: 4vw;
+			color: white;
+			text-shadow: 1px 1px 5px #666;
+			z-index: 5;
+			/* border: 1px solid red; */
+		}
+
+		@media screen and (max-width:680px){
+			header h2{ display: none;}
+			#category > div{
+				float: none;
+				width: 100%;
+			}
+		}
+		form[name=search]{
+			position: absolute;
+			top: 60%; left: 50%;
+			transform: translateX(-50%);
+			overflow: hidden;
+			/* border: 1px solid red; */
+			width: 30vw; height: 30px;
+			z-index: 9;
+		}
+		form[name=search] input{
+			display: block;
+			width: 80%; height: 100%;
+			border: none;
+			float: left;
+			padding: 5px 10px;
+			border-radius: 5px 0 0 5px;
+		}
+		form[name=search] a#s_btn{
+			display: block;
+			background: #ec2761;
+			width: 20%; height: 100%;
+			float: left;
+			text-align: center;
+			padding-top: 5px;
+			font-size: 12px;
+			color: #fff;
+			border-radius: 0 5px 5px 0;
+		}
+		#category > div:nth-child(1),
+		#category > div:nth-child(2),
+		#category > div:nth-child(3){
+			text-align: center;
+		}
+		#category > div > .fas{
+			font-size: 3em;
+			margin-bottom: 10px;
+		}
+	</style>
 </head>
 <body>
-	<header>
-		<h1>Hello My WEbSIte</h1>
-	</header>
-	<section>
-		<h1>Talk to me</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium repellendus, non numquam consequatur a expedita hic nobis molestiae dolore, laboriosam pariatur eos possimus, vel, tempora nesciunt in eveniet distinctio fugiat?</p>
+	<div class="container" id="main_header">
+		<header>
+			<div class="col2">
+				<h1>EAGLE <span>FIT</span></h1>
+				<h2 class='slogan'>바디 포 라이프</h2>
+			</div>
+			<div class="col2">
+				<a href="#" class="login">로그인</a>
+				<a href="#" class="sign">회원가입</a>
+			</div>
+		</header>
+		<p class="caption">운동은 곧 인생의 활력입니다!</p>
+		<form action="" name="search">
+			<input type="search" placeholder="프로그램 검색">
+			<a href="#" id="s_btn">검색</a>
+		</form>
+	</div>
+
+	<section id="category" class="container">
+		<div id="reservation" class="col3">
+			<i class="fas fa-sign-in-alt"></i>
+			<h2>예약하기</h2>
+			<p>지금 예약하고 전문가와 상담하세요.</p>
+		</div>
+		<div id="visit" class="col3">
+			<i class="fas fa-sign-in-alt"></i>
+			<h2>경험해보세요</h2>
+			<p>이제 센터에 방문하셔서 운동을 즐겨보세요.</p>
+		</div>
+		<div id="center_search" class="col3">
+			<i class="fas fa-sign-in-alt"></i>
+			<h2>센터 찾기</h2>
+			<p>여러분이 계신 위치에서 가장 가까운 센터를 찾아보세요.</p>
+		</div>
+
 	</section>
+
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

@@ -1,0 +1,31 @@
+/* csslick_grid.css */
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+/*
+  gutter size: 10px/960px = 1.04%
+*/
+[class^=col]{
+  float: left;
+  padding: 20px;
+}
+.col1{ width: 100%; }
+.col2{
+  width: 49.48%;
+  margin-right: 1.04%;
+}
+.col3{
+  width: 32.64%;
+  margin-right: 1.04%;
+}
+.col2:last-child,
+.col3:last-child{ margin-right: 0; }
+.container{
+  width: 100%;
+  /* max-width: 1200px; */
+  min-width: 580px;
+  margin: 0 auto;
+  overflow: hidden;
+  clear: both;
+}
