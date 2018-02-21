@@ -9,13 +9,16 @@
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/csslick_grid.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.3.2/svg-morpheus.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.3.2/svg-morpheus.js"></script>
 	<style media="screen">
 		body{
 			font-family: 'Roboto', sans-serif;
 		}
 		h1,h2,h3,h4{ font-weight: normal;}
 		a{ text-decoration: none;}
+		ul,ol{
+			list-style-type: none;
+		}
 
 		/* iOS에서  입력요소의 border-radius 문제 수정 */
 		input, textarea, select {
@@ -88,29 +91,61 @@
 			/* border: 1px solid red; */
 		}
 		header .toggle{ display: none;}
+
+		/*  모바일 토글 메뉴 */
 		#toggle_gnb{
 			position: fixed;
-			left: -40%; top: 0;
-			width: 40%; height: 100%;
+			left: -50%; top: 0;
+			width: 50%; height: 100%;
 			background: rgba(0,0,0,0.8);
 			color: #fff;
 			padding: 20px;
+			font-size: 0.8em;
 			z-index: 99;
 		}
 		#toggle_gnb.on{ left: 0%;}
+
 		#toggle_gnb > ul{
 			list-style-type: none;
 			padding-top: 50px;
 		}
-		#toggle_gnb li{
+		#toggle_gnb a{ color: rgba(255,255,255,0.7);}
+
+		/* 1뎁스 */
+		#toggle_gnb ul.depth1 > li{
+			position: relative;
 			padding: 10px 20px;
 			border-bottom: 1px solid rgba(255,255,255,0.5);
 			color: rgba(255,255,255,0.7);
+			/* border: 1px solid red; */
 		}
-		#toggle_gnb li:hover{
-			border-bottom-width: 2px;
+		#toggle_gnb ul.depth1 > li:hover > a{
+			display: block;
+			border-bottom-width: 1px;
 			color: rgba(255,255,255,1);
 		}
+		/* #toggle_gnb ul.depth1 > li:after{
+			content: "";
+			position: absolute;
+			right: 10px; top: 10px;
+			display: block;
+			width: 100%; height: 100%;
+			text-align: right;
+		} */
+		#toggle_gnb ul.depth1 .btn_arrow{
+			float: right;
+		}
+
+		/*  2뎁스 */
+		#toggle_gnb ul.depth2 > li > a{
+			display: block;
+			padding: 10px 0 5px 1em;
+			/* border: 1px solid red; */
+		}
+		#toggle_gnb ul.depth2 > li:hover > a{
+			color: rgba(255,255,255,1);
+		}
+		#toggle_gnb ul.depth2 > li > a:before{ content: "- ";}
 
 		@media screen and (max-width: 660px){
 			header h2{ display: none;}
@@ -202,13 +237,24 @@
 	</div>
 
 	<nav id="toggle_gnb">
-		<ul>
-			<li>로그인</li>
-			<li>회원가입</li>
-			<li>회사소개</li>
-			<li>예약하기</li>
-			<li>프로그램</li>
-			<li>센터찾기</li>
+		<ul class="depth1">
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+			<li><a href="#">소개</a>
+				<ul class="depth2">
+					<li><a href="#">내부시설</a></li>
+					<li><a href="#">강사소개</a></li>
+				</ul>
+			</li>
+			<li><a href="#">예약하기</a></li>
+			<li><a href="#">프로그램</a>
+				<ul class="depth2">
+					<li><a href="#">헬스</a></li>
+					<li><a href="#">요가</a></li>
+					<li><a href="#">필라테스</a></li>
+				</ul>
+			</li>
+			<li><a href="#">오시는길</a></li>
 			<li style="color:#ec2761">메뉴종료</li>
 		</ul>
 	</nav>
@@ -234,19 +280,46 @@
 
 	<script>
 		$(function(){
+			// 모바일 메뉴 토글
 			$('#toggle_gnb').css('transition','0.3s');
 			$('.toggle, #toggle_gnb li:last').click(function(){
 				$('#toggle_gnb').toggleClass('on');
+				// 메뉴 닫을 때 2뎁스 메뉴 닫기
+				$('#toggle_gnb ul.depth1 > li').find('ul').slideUp();
 			});
 
+			// PC화면일때 모바일 토글 메뉴 접기
 			$(window).resize(function(){
 				var w = $(this).width();
 				if(w > 660){
 					$('#toggle_gnb').removeClass('on');
 				}
 			});
+
+			// 토글 메뉴 2뎁스 폴딩
+			var $toggle_menu = $('#toggle_gnb').find('.depth2');
+			$toggle_menu.slideUp();
+
+			$('#toggle_gnb ul.depth1 > li').click(function(){
+				$(this).find('ul').slideToggle();
+			});
+
+			// 서브 메뉴가 있는 메뉴에만 화살표 추가)
+			var hasDepth2 = $('#toggle_gnb ul.depth1 > li:eq(0)').find('ul').is('.depth2');
+
+			for(var i = 0; i < $('#toggle_gnb ul.depth1 > li').length; i++){
+				var hasDepth2 = $('#toggle_gnb ul.depth1 > li').eq(i).find('ul').is('.depth2');
+				if(hasDepth2){
+					console.log('i= ', i, hasDepth2);
+					$('#toggle_gnb ul.depth1 > li:nth-child(' + (i+1) + ')')
+						.prepend('<span class="btn_arrow">▼</span>');
+				}
+			}
+
+
 		});
 	</script>
+
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
