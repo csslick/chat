@@ -95,8 +95,8 @@
 		/*  모바일 토글 메뉴 */
 		#toggle_gnb{
 			position: fixed;
-			left: -50%; top: 0;
-			width: 50%; height: 100%;
+			left: -60%; top: 0;
+			width: 60%; height: 100%;
 			background: rgba(0,0,0,0.8);
 			color: #fff;
 			padding: 20px;
@@ -255,7 +255,7 @@
 				</ul>
 			</li>
 			<li><a href="#">오시는길</a></li>
-			<li style="color:#ec2761">메뉴종료</li>
+			<li><a href="#" style="color:#ec2761">메뉴종료</a></li>
 		</ul>
 	</nav>
 
@@ -305,8 +305,6 @@
 			});
 
 			// 서브 메뉴가 있는 메뉴에만 화살표 추가)
-			var hasDepth2 = $('#toggle_gnb ul.depth1 > li:eq(0)').find('ul').is('.depth2');
-
 			for(var i = 0; i < $('#toggle_gnb ul.depth1 > li').length; i++){
 				var hasDepth2 = $('#toggle_gnb ul.depth1 > li').eq(i).find('ul').is('.depth2');
 				if(hasDepth2){
@@ -315,7 +313,6 @@
 						.prepend('<span class="btn_arrow">▼</span>');
 				}
 			}
-
 
 		});
 	</script>
