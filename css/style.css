@@ -48,7 +48,10 @@ header h1{font-family: 'Eagle Lake', cursive;}
 header h1 > span{color:#23caca}
 header h2{ font-size: 14px; margin-left: 10px;}
 header a{ color: #fff;}
-header div:nth-child(2){ text-align: right;}
+header div:nth-child(2){
+  text-align: right;
+  padding-right: 65px;
+}
 
 header .login, header .sign{
   border: 1px solid rgba(255,255,255,0.8);
@@ -79,7 +82,11 @@ header .login:hover, header .sign:hover{
   text-align: center;
   /* border: 1px solid red; */
 }
-header .toggle{ display: none;}
+header .toggle{
+  position: absolute;
+  right: 20px; top: 15px;
+  display: block;
+}
 
 /*  모바일 토글 메뉴 */
 #toggle_gnb{
