@@ -191,6 +191,10 @@ form[name=search] a#s_btn{
 }
 #category > div > h2{ color: #23caca;}
 #category > div > p{ margin-top: 5px;}
+.category_title{
+  font-size: 2em;
+  color: #23caca
+}
 
 #facility{
   background: #111;
