@@ -153,6 +153,7 @@ form[name=search] input{
   padding: 5px 20px;
   border-radius: 5px 0 0 5px;
   font-size: 1em;
+  opacity: 0.9;
 }
 form[name=search] a#s_btn{
   display: block;
@@ -164,6 +165,7 @@ form[name=search] a#s_btn{
   font-size: 1em;
   color: #fff;
   border-radius: 0 5px 5px 0;
+  opacity: 0.9;
 }
 
 #category, #facility{
