@@ -86,6 +86,19 @@
 				$('#toggle_gnb').toggleClass('on');
 				// 메뉴 닫을 때 2뎁스 메뉴 닫기
 				$('#toggle_gnb ul.depth1 > li').find('ul').slideUp();
+
+				// 토글 버튼 아이콘 토글
+				if($('#toggle_gnb').hasClass('on')){
+					$('.toggle > .fas')
+						.removeClass('fa-bars')
+						.addClass('fa-times');
+				} else{
+					$('.toggle > .fas')
+						.removeClass('fa-times')
+						.addClass('fa-bars');
+				}
+				console.log($('#toggle_gnb').hasClass('on'));
+
 			});
 
 			// PC화면일때 모바일 토글 메뉴 접기
