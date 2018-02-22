@@ -72,10 +72,10 @@ header .login:hover, header .sign:hover{
 #main_header .caption{
   /*  운동은 곧 인생의 활력입니다! */
   position: absolute;
-  width:80%;
+  width:85%;
   left: 50%; top: 50%;
   transform: translate(-50%,-50%);
-  font-size: 6.5vw;
+  font-size: 6.2vw;
   color: white;
   text-shadow: 1px 1px 5px #666;
   z-index: 5;
@@ -277,7 +277,7 @@ footer p{
   }
   #main_header .caption{
     width: 100%;
-    font-size: 30px;
+    font-size: 26px;
   }
   form[name=search]{
     /* width: 80%; height: 40px; */
