@@ -119,6 +119,7 @@
 				$('#toggle_gnb').toggleClass('on');
 				// 메뉴 닫을 때 2뎁스 메뉴 닫기
 				$('#toggle_gnb ul.depth1 > li').find('ul').slideUp();
+				$('.btn_arrow').removeClass('on'); // 화살표 초기화
 
 				// 토글 버튼 아이콘 토글
 				if($('#toggle_gnb').hasClass('on')){
