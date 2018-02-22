@@ -294,4 +294,8 @@ footer p{
     margin-right: 0;
     margin-bottom: 20px;
   }
+  #bottom_section .col1 h1 span{
+    display: block;
+    margin-top: 10px;
+  }
 }
