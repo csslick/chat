@@ -148,6 +148,8 @@
 
 			$('#toggle_gnb ul.depth1 > li').click(function(){
 				$(this).find('ul').slideToggle();
+				// 현재 화살표 회전
+				$('.btn_arrow', this).toggleClass('on');
 			});
 
 			// 서브 메뉴가 있는 메뉴에만 화살표 추가)

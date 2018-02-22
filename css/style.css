@@ -7,7 +7,9 @@ a{ text-decoration: none;}
 ul,ol{
   list-style-type: none;
 }
-
+/* body::-webkit-scrollbar {
+    display: none;
+} */
 /* iOS에서  입력요소의 border-radius 문제 수정 */
 input, textarea, select {
   -webkit-appearance: none;
@@ -122,6 +124,10 @@ header .toggle{
 }
 #toggle_gnb ul.depth1 .btn_arrow{
   float: right;
+  transition: 0.3s;
+}
+#toggle_gnb ul.depth1 .btn_arrow.on{
+  transform: rotate(180deg);
 }
 
 /*  2뎁스 */
