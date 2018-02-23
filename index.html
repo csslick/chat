@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="arthor" content="csslick">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<title>tawk</title>
+	<title>FITNESS</title>
 	<link href="https://fonts.googleapis.com/css?family=Eagle+Lake|Roboto" rel="stylesheet">
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
@@ -31,7 +31,7 @@
 				<a href="#" class="sign">회원가입</a>
 			</div>
 		</header>
-		<p class="caption">운동은 곧 인생의 활력입니다!</p>
+		<p class="caption"><span>운동은 곧</span> 인생의 활력입니다!</p>
 		<form action="" name="search">
 			<input type="search" placeholder="프로그램 검색">
 			<a href="#" id="s_btn">검색</a>
@@ -162,6 +162,12 @@
 						.prepend('<span class="btn_arrow">▼</span>');
 				}
 			}
+
+			$(window).scroll(function(){
+				var f = $(window).scrollTop()/3;
+				// console.log(f);
+				$('#main_header').css('filter', 'grayscale('+f+'%)');
+			});
 
 		});
 	</script>
