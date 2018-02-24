@@ -23,7 +23,7 @@ input, textarea, select {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-/*   background-attachment: fixed; */
+  background-attachment: fixed;
 }
 #main_header:after{
   content: "";
@@ -266,7 +266,7 @@ footer p{
 /* 모바일 */
 @media screen and (max-width: 660px){
   #main_header{ 
-    background-position: scroll;
+    background-attachment: scroll;
   }
   header h2{ display: none;}
   #category > div{
