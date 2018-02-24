@@ -265,7 +265,7 @@ footer p{
 
 /* 모바일 */
 @media screen and (max-width: 660px){
-  #main_header{ background-size: 100%;}
+  #main_header{ background-size: 100% 100%;}
   header h2{ display: none;}
   #category > div{
     float: none;
