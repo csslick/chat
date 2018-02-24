@@ -266,7 +266,6 @@ footer p{
 /* 모바일 */
 @media screen and (max-width: 660px){
   #main_header{ 
-    background: url('https://images.pexels.com/photos/864990/pexels-photo-864990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
     background-size: auto 100%;
   }
   header h2{ display: none;}
