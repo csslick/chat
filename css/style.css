@@ -313,3 +313,10 @@ footer p{
     margin-top: 10px;
   }
 }
+
+
+@media screen and (max-width: 3750px){
+  #main_header{ 
+    background-attachment: scroll;
+  }
+}
