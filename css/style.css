@@ -266,7 +266,7 @@ footer p{
 /* 모바일 */
 @media screen and (max-width: 660px){
   #main_header{ 
-    background-attachment: scroll;
+/*     background-attachment: scroll; */
   }
   header h2{ display: none;}
   #category > div{
